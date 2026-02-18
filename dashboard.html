@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TaskFlow - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <div class="sidebar">
+            <h2>TaskFlow</h2>
+            <ul>
+                <li onclick="showSection('tasksSection')">Dashboard</li>
+                <li onclick="showSection('tasksSection')">Minhas Tarefas</li>
+                <li onclick="logout()">Logout</li>
+            </ul>
+
+        </div>
+
+        <div class="main-content">
+
+            <h1>Dashboard</h1>
+
+            <div class="cards">
+
+                <div class="card-info">
+                    <h3>Total</h3>
+                    <div class="status-chart">
+                        <div class="chart-circle" id="chartTotal"></div>
+                        <span id="totalTasks">0</span>
+                    </div>
+                </div>
+
+                <div class="card-info">
+                    <h3>Pendentes</h3>
+                    <div class="status-chart">
+                        <div class="chart-circle" id="chartPending"></div>
+                        <span id="pendingTasks">0</span>
+                    </div>
+                </div>
+
+                <div class="card-info">
+                    <h3>Concluídas</h3>
+                    <div class="status-chart">
+                        <div class="chart-circle" id="chartCompleted"></div>
+                        <span id="completedTasks">0</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="tasksSection" class="section active">
+                <button class="add-task-btn" onclick="openModal()">+ Nova Tarefa</button>
+
+                <div class="task-list">
+                    <h3>Minhas Tarefas</h3>
+                    <div id="tasksContainer"></div>
+                </div>
+
+                <div class="history-list">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h3>Histórico</h3>
+                        <button onclick="clearHistory()" style="width:auto; padding:6px 10px; font-size:12px;">
+                            Limpar Histórico
+                        </button>
+                    </div>
+
+                    <div id="historyContainer"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MODAL -->
+        <div class="modal" id="taskModal">
+            <div class="modal-content">
+                <h3 id="modalTitle">Nova Tarefa</h3>
+
+                <input type="text" id="taskTitle" placeholder="Título da tarefa"
+                    style="width:100%; padding:8px; margin:10px 0;">
+
+                <button onclick="saveTask()">Salvar</button>
+                <button onclick="closeModal()" style="margin-top:10px;">Cancelar</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
