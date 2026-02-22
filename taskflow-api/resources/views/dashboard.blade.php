@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>TaskFlow - Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
@@ -13,6 +13,7 @@
 
         <div class="sidebar">
             <h2>TaskFlow</h2>
+            <h3>Bem-vindo, {{ Auth::user()->name }}</h3>
             <ul>
                 <li onclick="showSection('tasksSection')">Dashboard</li>
                 <li onclick="showSection('tasksSection')">Minhas Tarefas</li>
@@ -93,7 +94,7 @@
 
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>

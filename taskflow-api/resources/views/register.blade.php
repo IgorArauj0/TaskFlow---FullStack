@@ -10,20 +10,26 @@
     <div class="card">
         <h2>Criar Conta</h2>
 
-        <form id="registerForm">
+        <form method="POST" action="{{ route('register') }}" id="registerForm">
+            @csrf
             <div class="input-group">
                 <label>Nome</label>
-                <input type="text" id="name" required>
+                <input type="text" id="name" name="name" required>
             </div>
 
             <div class="input-group">
                 <label>Email</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email" name="email" required>
             </div>
 
             <div class="input-group">
                 <label>Senha</label>
-                <input type="password" id="password" required>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="input-group">
+                <label>Confirmar Senha</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" required>
             </div>
 
             <button type="submit">Cadastrar</button>

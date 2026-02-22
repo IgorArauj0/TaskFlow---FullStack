@@ -1,0 +1,22 @@
+Criando o Backend Laravel
+1️⃣ Criar o Projeto Laravel
+composer create-project laravel/laravel taskflow-api
+
+2 - Analisar se a versão do PHP está atualizada via XAMPP
+
+3 - "php artisan serve" VERIFICAR APÓS INSTALAÇÃO SE O SERVIDOR ESTA RODANDO
+
+4 - CREATE DATABASE taskflow;
+
+5 - Abra o arquivo: taskflow-api/.env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=taskflow
+DB_USERNAME=root
+DB_PASSWORD=
+
+6 - Rodar no terminal: php artisan config:clear 
+7 - php artisan migrate
+
+8 - 
